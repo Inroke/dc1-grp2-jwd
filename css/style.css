@@ -24,6 +24,18 @@ nav ul{
     
 }
 
+.commentaires article {
+    background-color: #ccc;
+    text-align: left;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+.commentaires article time {
+    font-style: italic;
+    color: purple;
+}
+
 nav ul li a{
     color: black;
     text-decoration: none;
