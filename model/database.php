@@ -38,3 +38,19 @@ function getAllEntities(string $table) : array {
     return $stmt->fetchAll();
 
 }
+
+function deleteEntity(string $table, int $id): ?Exception {
+    global $connection;
+
+    $query ="DELETE FROM $table WHERE id = :id";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(':id', $id);
+    try {    
+        $stmt->execute();
+    } catch (Exception $ex) {
+        return $ex;
+    }
+
+    return null;
+}
