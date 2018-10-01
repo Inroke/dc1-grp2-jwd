@@ -20,10 +20,17 @@ require_once '../../layout/header.php'?>
     <tbody>
         <?php foreach ($liste_categories as $categorie) : ?>
         <tr>
-            <td> <?php echo $categorie['libelle']; ?></td>
-            <td></td>
+            <td>
+                <?php echo $categorie['libelle']; ?>
+            </td>
+            <td>
+                <a href="update.php?id=<?php echo $categorie["id"]; ?>" class="btn btn-warning">
+                    <i class="fa fa-edit"></i>
+                    Modifier
+                </a>
+            </td>
         </tr>
-<?php endforeach;?>
+        <?php endforeach;?>
     </tbody>
 </table>
 <?php require_once '../../layout/footer.php'?>
