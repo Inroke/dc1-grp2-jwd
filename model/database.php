@@ -26,3 +26,15 @@ function getEntity(string $table, int $id) : array {
     return $stmt->fetch();
 
 }
+
+function getAllEntities(string $table) : array {
+    global $connection;
+
+    $query ="SELECT * FROM $table";
+
+    $stmt = $connection->prepare($query);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+
+}
