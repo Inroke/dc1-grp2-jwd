@@ -2,7 +2,7 @@
 
 <h1>Création d'une catégorie</h1>
 
-<form action="action">
+<form action="create_query.php" method="POST">
 
 </form>
 
