@@ -81,5 +81,22 @@ function insertPhoto(string $titre, string $img, string $description, int $categ
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":categorie_id", $categorie_id);
     $stmt->execute();
+
+    $id = $connection->lastInsertId();
+
+    foreach ($tag_ids as $tag_id) {
+        insertPhotoHasTag($id, $tag_id);
+    }
+}
+
+function insertPhotoHasTag(int $photo_id, int $tag_id) {
+    global $connection;
+
+    $query = "INSERT INTO photo_has_tag (photo_id, tag_id) VALUES (:photo_id, :tag_id);";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":photo_id", $photo_id);
+    $stmt->bindParam(":tag_id", $tag_id);
+    $stmt->execute();
 }
  ?>

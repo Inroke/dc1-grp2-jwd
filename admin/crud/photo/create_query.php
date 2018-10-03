@@ -5,7 +5,7 @@ require_once '../../../model/database.php';
 $titre = $_POST["titre"];
 $description = $_POST["description"];
 $categorie_id = $_POST["categorie_id"];
-$tag_ids = $_POST["tag_ids"];
+$tag_ids = isset($_POST["tag_ids"]) ? $_POST["tag_ids"] : [];
 
 $tmp = $_FILES['img']['tmp_name'];
 $filename = $_FILES['img']['name'];
