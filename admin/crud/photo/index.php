@@ -58,12 +58,12 @@ require_once '../../layout/header.php'?>
             </td>
             <td>
                 <div class="actions">
-                    <a href="update.php?id=<?php echo $categorie[" id"]; ?>" class="btn btn-warning">
+                    <a href="update.php?id=<?php echo $photo["id"]; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>
                         Modifier
                     </a>
                     <form action="delete_query.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $categorie[" id"];?>">
+                        <input type="hidden" name="id" value="<?php echo $photo["id"];?>">
                         <button class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                             Supprimer
